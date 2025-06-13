@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function FeaturSection() {
     return (
         <div className="container-fluid featurs py-5">

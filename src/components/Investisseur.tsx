@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Investisseur() {
     return (
         <div className="container-fluid testimonial py-5">
