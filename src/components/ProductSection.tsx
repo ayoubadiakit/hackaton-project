@@ -1,0 +1,55 @@
+import { useState } from 'react'
+import ProductCard from './ProductCard';
+import type { Product } from '../models/Product';
+import { categories, products } from '../datas/Data';
+
+export default function ProductSection() {
+    const [activeTab, setActiveTab] = useState<string>('tab-1');
+
+    const filteredProducts = (): Product[] => {
+        const selected = categories.find(c => c.id === activeTab);
+        if (!selected || !selected.category) return products;
+        return products.filter(p => p.category === selected.category);
+    };
+    return (
+        <div className="container-fluid fruite py-5">
+            <div className="container py-5">
+                <div className="tab-class text-center">
+                    <div className="row g-4">
+                        <div className="col-lg-3 text-start">
+                            <h1>Tous les produits</h1>
+                        </div>
+                        <div className="col-lg-9 text-end">
+                            <ul className="nav nav-pills d-inline-flex text-center mb-5">
+                                {categories.map((tab) => (
+                                    <li key={tab.id} className="nav-item">
+                                        <button
+                                            className={`d-flex m-3 py-2 rounded-pill btn border border-secondary rounded-pill px-3 text-primary ${activeTab === tab.id ? "bg-secondary" : ""}`}
+                                            onClick={() => setActiveTab(tab.id)}
+                                        >
+                                            <span className="text-dark" style={{ width: '110px' }}>{tab.label}</span>
+                                        </button>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div className='tab-content'>
+                    <div className="tab-pane fade show p-0 active">
+                        <div className="row g-4">
+                            <div className="col-lg-12">
+                                <div className="row g-4">
+                                    {filteredProducts().map((product) => (
+                                        <ProductCard key={product.id} product={product} />
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
