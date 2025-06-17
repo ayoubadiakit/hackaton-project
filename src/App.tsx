@@ -9,7 +9,6 @@ function App() {
         <Loading />
         <NavigationBar />
         <Dashboard />
-        
         <Footer />
       </div>
     </>

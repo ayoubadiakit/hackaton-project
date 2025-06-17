@@ -8,7 +8,7 @@ export default function ProductCard({ product }: { product: Product }) {
                 <div className="fruite-img">
                     <img src={product.image} className="img-fluid w-100 rounded-top" alt={product.name} />
                 </div>
-                <div className="text-white bg-secondary px-3 py-1 rounded position-absolute" style={{ top: '10px', left: '10px' }}>
+                <div className="text-white bg-secondary px-3 py-1 rounded position-absolute mt-2 ms-2">
                     {product.category}
                 </div>
                 <div className="p-4 border border-secondary border-top-0 rounded-bottom">
