@@ -1,14 +1,14 @@
 import type { Product } from "../models/Product";
 
-export default function ProductCard({ product }: { product: Product }) {
+export default function ProductCard({ product, styles }: { product: Product, styles:string }) {
 
     return (
-        <div className="col-md-6 col-lg-4 col-xl-3">
+        <div className={styles}>
             <div className="rounded position-relative fruite-item">
                 <div className="fruite-img">
                     <img src={product.image} className="img-fluid w-100 rounded-top" alt={product.name} />
                 </div>
-                <div className="text-white bg-secondary px-3 py-1 rounded position-absolute mt-2 ms-2">
+                <div className="text-white bg-secondary px-3 py-1 rounded position-absolute" style={{ top: '10px', left: '10px' }}>
                     {product.category}
                 </div>
                 <div className="p-4 border border-secondary border-top-0 rounded-bottom">

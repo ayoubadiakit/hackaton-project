@@ -1,17 +1,8 @@
-import NavigationBar from './components/NavigationBar.js';
-import Loading from './components/Loading.tsx';
-import Dashboard from './pages/Dashboard.tsx';
-import Footer from './components/Footer.tsx';
+import { RouterProvider } from 'react-router-dom';
+import { routes } from './Routes.tsx';
 function App() {
   return (
-    <>
-      <div>
-        <Loading />
-        <NavigationBar />
-        <Dashboard />
-        <Footer />
-      </div>
-    </>
+    <RouterProvider router={routes} />
   )
 }
 

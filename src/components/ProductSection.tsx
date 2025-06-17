@@ -42,7 +42,11 @@ export default function ProductSection() {
                             <div className="col-lg-12">
                                 <div className="row g-4">
                                     {filteredProducts().map((product) => (
-                                        <ProductCard key={product.id} product={product} />
+                                        <ProductCard
+                                            key={product.id}
+                                            product={product}
+                                            styles='col-md-6 col-lg-4 col-xl-3'
+                                        />
                                     ))}
                                 </div>
                             </div>

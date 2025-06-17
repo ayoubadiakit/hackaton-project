@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { NavLink } from "react-router";
 
 export default function NavigationBar() {
   const navRef = useRef(null);
@@ -28,7 +29,6 @@ export default function NavigationBar() {
   }, []);
 
   return (
-    // Navbar start
     <div ref={navRef} className="container-fluid fixed-top">
       <div className="container topbar bg-primary d-none d-lg-block">
         <div className="d-flex justify-content-between">
@@ -78,18 +78,10 @@ export default function NavigationBar() {
             id="navbarCollapse"
           >
             <div className="navbar-nav mx-auto">
-              <a href="#" className="nav-item nav-link active mx-2">
-                Acceuil
-              </a>
-              <a href="#" className="nav-item nav-link mx-2">
-                Catégories
-              </a>
-              <a href="#" className="nav-item nav-link mx-2">
-                A propos
-              </a>
-              <a href="#" className="nav-item nav-link mx-2">
-                Contact
-              </a>
+              <NavLink to="/" className="nav-item nav-link mx-2">Accueil</NavLink>
+              <NavLink to="/categories" className="nav-item nav-link mx-2">Catégories</NavLink>
+              <NavLink to="/a-propos" className="nav-item nav-link mx-2">À propos</NavLink>
+              <NavLink to="/contact" className="nav-item nav-link mx-2">Contact</NavLink>
             </div>
             <div className="d-flex m-3 me-0">
               <a href="#" className="position-relative me-4 my-auto">
