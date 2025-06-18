@@ -1,7 +1,6 @@
 import SwiperImages from '../components/SwiperImages';
 
 import ProductSection from '../components/ProductSection.tsx';
-import ProductPopulary from '../components/ProductPopulary.tsx';
 import FeaturSection from '../components/FeaturSection.tsx';
 import ClientSatisfait from '../components/ClientSatisfait.tsx';
 import Investisseur from '../components/Investisseur';
@@ -20,7 +19,6 @@ export default function Dashboard() {
             </div>
             <FeaturSection />
             <ProductSection />
-            {/* <ProductPopulary /> */}
             <Investisseur />
             <ClientSatisfait />
         </div>
