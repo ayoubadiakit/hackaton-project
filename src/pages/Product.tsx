@@ -1,5 +1,5 @@
 
-import CategoriesSection from '../components/CategoriesSection';
+import CategoriesSection from '../components/SectionCaterogie';
 import ProductCard from '../components/ProductCard';
 import { products } from '../datas/Data';
 export default function Product() {

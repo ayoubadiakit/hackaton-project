@@ -1,4 +1,4 @@
-export default function SectionStatistique() {
+export default function DashboardPartial4() {
     return (
         <div className="col-md-12 col-lg-7">
             <h4 className="mb-3 text-secondary">Aliments 100% naturel</h4>

@@ -1,5 +1,5 @@
 import SectionDashboardPartials from './SectionDashboardPartials';
-export default function FeaturSection() {
+export default function DashboardPartial1() {
     return (
         <div className="container-fluid featurs py-5">
             <div className="container py-4">

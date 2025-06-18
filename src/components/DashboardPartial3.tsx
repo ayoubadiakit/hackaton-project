@@ -1,4 +1,4 @@
-export default function ClientSatisfait() {
+export default function DashboardPartial3() {
     return (
         <div className="container-fluid py-5">
             <div className="container">

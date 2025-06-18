@@ -1,4 +1,4 @@
-import CategoriesSection from "../components/CategoriesSection";
+import CategoriesSection from "../components/SectionCaterogie";
 import img1 from '../assets/img/single-item.jpg';
 import img2 from '../assets/img/featur-2.jpg';
 import img3 from '../assets/img/featur-3.jpg';
@@ -207,7 +207,7 @@ export default function DetailProduct() {
                             </form>
                         </div>
                     </div>
-                    <CategoriesSection />
+                    {/* <CategoriesSection />     */}
                 </div>
             </div>
         </div>

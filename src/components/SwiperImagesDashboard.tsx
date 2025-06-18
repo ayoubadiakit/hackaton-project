@@ -17,7 +17,7 @@ const images = [
     },
 ];
 
-export default function SwiperImages() {
+export default function SwiperImagesDashboard() {
     return (
         <div className="col-md-12 col-lg-5">
             <div className="position-relative overflow-hidden rounded">

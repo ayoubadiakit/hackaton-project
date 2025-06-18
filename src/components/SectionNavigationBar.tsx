@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { NavLink } from "react-router";
 
-export default function NavigationBar() {
+export default function SectionNavigationBar() {
   const navRef = useRef(null);
 
   useEffect(() => {

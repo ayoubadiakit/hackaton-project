@@ -1,13 +1,13 @@
 import { Outlet } from 'react-router-dom';
-import NavigationBar from './components/NavigationBar.js';
-import Loading from './components/Loading.tsx';
+import SectionNavigationBar from './components/SectionNavigationBar.js';
+import SectionLoading from './components/SectionLoading.tsx';
 import Footer from './components/Footer.tsx';
 
 export default function Layout() {
     return (
         <div>
-            <Loading />
-            <NavigationBar />
+            <SectionLoading />
+            <SectionNavigationBar />
             <main>
                 <Outlet />
             </main>

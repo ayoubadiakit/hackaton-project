@@ -1,4 +1,4 @@
-export default function Investisseur() {
+export default function DashboardPartial2() {
     return (
         <div className="container-fluid testimonial py-5">
             <div className="container py-5">
