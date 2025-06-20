@@ -5,7 +5,7 @@ export default function Product() {
     return (
         <div className="container-fluid fruite py-5" style={{ marginTop: '100px' }}>
             <div className="container py-5">
-                <h1 className="mb-4">Fresh fruits shop</h1>
+                <h1 className="mb-4">Tous les produits </h1>
                 <div className="row g-4">
                     <div className="col-lg-12">
                         <div className="row g-4">
