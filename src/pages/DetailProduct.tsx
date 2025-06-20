@@ -1,18 +1,15 @@
-import CategoriesSection from "../components/SectionCaterogie";
 import img1 from '../assets/img/single-item.jpg';
-import img2 from '../assets/img/featur-2.jpg';
-import img3 from '../assets/img/featur-3.jpg';
 
 export default function DetailProduct() {
     return (
         <div className="container-fluid py-5" style={{ marginTop: '100px' }}>
             <div className="container py-5">
                 <div className="row g-4 mb-5">
-                    <div className="col-lg-8 col-xl-9">
+                    <div className="col-lg-12 col-xl-10">
                         <div className="row g-4">
                             <div className="col-lg-6">
                                 <div className="border rounded">
-                                    <a href="#">
+                                    <a>
                                         <img src={img1} className="img-fluid rounded" alt="Image" />
                                     </a>
                                 </div>
@@ -56,21 +53,12 @@ export default function DetailProduct() {
                             <div className="col-lg-12">
                                 <nav>
                                     <div className="nav nav-tabs mb-3">
-                                        <button
+                                        <h5
                                             title="Buttom description"
-                                            className="nav-link active border-white border-bottom-0"
-                                            type="button"
-                                            id="nav-about-tab"
+                                            className="nav-link border-white border-bottom-0"
                                         >
                                             Description
-                                        </button>
-                                        <button
-                                            className="nav-link border-white border-bottom-0"
-                                            type="button"
-                                            id="nav-mission-tab"
-                                        >
-                                            Reviews
-                                        </button>
+                                        </h5>
                                     </div>
                                 </nav>
                                 <div className="tab-content mb-5">
@@ -126,72 +114,30 @@ export default function DetailProduct() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="tab-pane" id="nav-mission" role="tabpanel" aria-labelledby="nav-mission-tab">
-                                        <div className="d-flex">
-                                            <img src="img/avatar.jpg" className="img-fluid rounded-circle p-3" style={{ width: "100px", height: "100px" }} alt="" />
-                                            <div className="">
-                                                <p className="mb-2" style={{ fontSize: "14px" }}>April 12, 2024</p>
-                                                <div className="d-flex justify-content-between">
-                                                    <h5>Jason Smith</h5>
-                                                    <div className="d-flex mb-3">
-                                                        <i className="fa fa-star text-secondary"></i>
-                                                        <i className="fa fa-star text-secondary"></i>
-                                                        <i className="fa fa-star text-secondary"></i>
-                                                        <i className="fa fa-star text-secondary"></i>
-                                                        <i className="fa fa-star"></i>
-                                                    </div>
-                                                </div>
-                                                <p>The generated Lorem Ipsum is therefore always free from repetition injected humour, or non-characteristic words etc. Susp endisse ultricies nisi vel quam suscipit </p>
-                                            </div>
-                                        </div>
-                                        <div className="d-flex">
-                                            <img src="img/avatar.jpg" className="img-fluid rounded-circle p-3" style={{ width: "100px", height: "100px" }} alt="" />
-                                            <div className="">
-                                                <p className="mb-2" style={{ fontSize: "14px" }}>April 12, 2024</p>
-                                                <div className="d-flex justify-content-between">
-                                                    <h5>Sam Peters</h5>
-                                                    <div className="d-flex mb-3">
-                                                        <i className="fa fa-star text-secondary"></i>
-                                                        <i className="fa fa-star text-secondary"></i>
-                                                        <i className="fa fa-star text-secondary"></i>
-                                                        <i className="fa fa-star"></i>
-                                                        <i className="fa fa-star"></i>
-                                                    </div>
-                                                </div>
-                                                <p className="text-dark">The generated Lorem Ipsum is therefore always free from repetition injected humour, or non-characteristic words etc. Susp endisse ultricies nisi vel quam suscipit </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="tab-pane" id="nav-vision" role="tabpanel">
-                                        <p className="text-dark">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
-                                            amet diam et eos labore. 3</p>
-                                        <p className="mb-0">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.
-                                            Clita erat ipsum et lorem et sit</p>
-                                    </div>
                                 </div>
                             </div>
                             <form action="#">
-                                <h4 className="mb-5 fw-bold">Leave a Reply</h4>
+                                <h4 className="mb-5 fw-bold">Laisser un commentaire</h4>
                                 <div className="row g-4">
                                     <div className="col-lg-6">
                                         <div className="border-bottom rounded">
-                                            <input type="text" className="form-control border-0 me-4" placeholder="Yur Name *" />
+                                            <input type="text" className="form-control border-0 me-4" placeholder="Votre identité *" />
                                         </div>
                                     </div>
                                     <div className="col-lg-6">
                                         <div className="border-bottom rounded">
-                                            <input type="email" className="form-control border-0" placeholder="Your Email *" />
+                                            <input type="email" className="form-control border-0" placeholder="Votre email *" />
                                         </div>
                                     </div>
                                     <div className="col-lg-12">
                                         <div className="border-bottom rounded my-4">
-                                            <textarea className="form-control border-0" cols={30} rows={8} placeholder="Your Review *" spellCheck={false}></textarea>
+                                            <textarea className="form-control border-0" cols={30} rows={8} placeholder="Votre commentaire *" spellCheck={false}></textarea>
                                         </div>
                                     </div>
                                     <div className="col-lg-12">
                                         <div className="d-flex justify-content-between py-3 mb-5">
                                             <div className="d-flex align-items-center">
-                                                <p className="mb-0 me-3">Please rate:</p>
+                                                <p className="mb-0 me-3">Veuillez évaluer :</p>
                                                 <div className="d-flex align-items-center" style={{ fontSize: "12px" }}>
                                                     <i className="fa fa-star text-muted"></i>
                                                     <i className="fa fa-star"></i>
@@ -200,14 +146,13 @@ export default function DetailProduct() {
                                                     <i className="fa fa-star"></i>
                                                 </div>
                                             </div>
-                                            <a href="#" className="btn border border-secondary text-primary rounded-pill px-4 py-3"> Post Comment</a>
+                                            <a href="#" className="btn border border-secondary text-primary rounded-pill px-4 py-3"> Envoyer</a>
                                         </div>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    {/* <CategoriesSection />     */}
                 </div>
             </div>
         </div>
