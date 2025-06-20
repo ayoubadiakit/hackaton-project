@@ -61,9 +61,9 @@ export default function SectionNavigationBar() {
       </div>
       <div className="container px-0">
         <nav className="navbar navbar-light bg-white navbar-expand-xl">
-          <a href="#" className="navbar-brand">
-            <h1 className="text-primary display-6">AGRICONNECT</h1>
-          </a>
+          <NavLink to="/" className="navbar-brand">
+            <h1 className="text-primary display-6">AGRICONNECT</h1> 
+          </NavLink>
           <button
             title="Toggle navigation menu"
             className="navbar-toggler py-2 px-3"

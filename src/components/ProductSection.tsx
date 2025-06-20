@@ -4,7 +4,7 @@ import type { Product } from '../models/Product';
 import { categories, products } from '../datas/Data';
 
 export default function ProductSection() {
-    const [activeTab, setActiveTab] = useState<string>('tab-1');
+    const [activeTab, setActiveTab] = useState<number>(1);
 
     const filteredProducts = (): Product[] => {
         const selected = categories.find(c => c.id === activeTab);

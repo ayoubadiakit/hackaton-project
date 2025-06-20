@@ -1,7 +1,18 @@
 import CategoriesSection from '../components/SectionCaterogie';
 import ProductCard from '../components/ProductCard';
-import { products } from '../datas/Data';
+import { allCategories, products } from '../datas/Data';
+import type { Product } from '../models/Product';
+import { useState } from 'react';
 export default function Product() {
+    const [activeTab, setActiveTab] = useState<number>(1);
+    const onClickCategory = (id: number) => {
+        setActiveTab(id);
+    }
+    const filteredProducts = (): Product[] => {
+        const selected = allCategories.find(c => c.id === activeTab);
+        if (!selected || !selected.category) return products;
+        return products.filter(p => p.category === selected.category);
+    };
     return (
         <div className="container-fluid fruite py-5" style={{ marginTop: '100px' }}>
             <div className="container py-5">
@@ -29,12 +40,16 @@ export default function Product() {
                             </div>
                         </div>
                         <div className="row g-5">
-                            <CategoriesSection />
+                            <CategoriesSection onCategoryClick={onClickCategory} />
                             <div className="col-lg-9">
                                 <div className="row g-4 justify-content-center">
-                                    {products.map((p) => {
-                                        return <ProductCard key={p.id} product={p} styles='col-md-6 col-lg-6 col-xl-4' />
-                                    })}
+                                    {filteredProducts().map((product) => (
+                                        <ProductCard
+                                            key={product.id}
+                                            product={product}
+                                            styles='col-md-6 col-lg-6 col-xl-4'
+                                        />
+                                    ))}
 
                                     <div className="col-12">
                                         <div className="pagination d-flex justify-content-center mt-5">

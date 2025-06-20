@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function PageNotFound() {
     return (
-        <div className="container-fluid py-5 mt-5">
+        <div className="container-fluid py-5" style={{ marginTop:'100px' }}>
             <div className="container py-5 text-center">
                 <div className="row justify-content-center">
                     <div className="col-lg-6">

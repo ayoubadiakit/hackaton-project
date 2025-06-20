@@ -14,10 +14,33 @@ import img11 from "../assets/img/fonio.jpg";
 import img12 from "../assets/img/avoine.jpg";
 
 export const categories: Category[] = [
-  { id: "tab-2", label: "Légumes", category: "légumes" },
-  { id: "tab-3", label: "Fruits", category: "Fruits" },
-  { id: "tab-4", label: "Céréales", category: "Céréales" },
-  { id: "tab-1", label: "Tous", category: null },
+  { id: 2, label: "Légumes", category: "légumes" },
+  { id: 3, label: "Fruits", category: "Fruits" },
+  { id: 4, label: "Céréales", category: "Céréales" },
+  { id: 1, label: "Tous", category: null },
+];
+
+export const allCategories: Category[] = [
+  {
+    id: 1,
+    label: "Tout",
+    category: null,
+  },
+  {
+    id: 2,
+    label: "Légumes",
+    category: "légumes",
+  },
+  {
+    id: 3,
+    label: "Fruits",
+    category: "Fruits",
+  },
+  {
+    id: 4,
+    label: "Céréales",
+    category: "Céréales",
+  },
 ];
 
 export const products: Product[] = [
@@ -68,14 +91,14 @@ export const products: Product[] = [
     name: "Oignon",
     price: "$4.99 / kg",
     image: img7,
-    category: "légumes", 
+    category: "légumes",
   },
   {
     id: 8,
     name: "Gombo",
     price: "$4.99 / kg",
     image: img8,
-    category: "légumes", 
+    category: "légumes",
   },
   {
     id: 9,
@@ -89,21 +112,20 @@ export const products: Product[] = [
     name: "Maïs",
     price: "$4.99 / kg",
     image: img10,
-    category: "Céréales", 
+    category: "Céréales",
   },
   {
     id: 11,
     name: "Fonio",
     price: "$4.99 / kg",
     image: img11,
-    category: "Céréales", 
+    category: "Céréales",
   },
   {
     id: 12,
     name: "Avoine",
     price: "$4.99 / kg",
     image: img12,
-    category: "Céréales", 
-  }
-
+    category: "Céréales",
+  },
 ];
