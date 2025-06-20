@@ -13,8 +13,6 @@ export default defineConfig({
         dashboard: path.resolve(__dirname, "src/pages/Dashboard.tsx"),
         detailProduct: path.resolve(__dirname, "src/pages/DetailProduct.tsx"),
         PageNotFound: path.resolve(__dirname, "src/pages/PageNotFound.tsx"),
-        login: path.resolve(__dirname, "src/pages/Login.tsx"),
-        register: path.resolve(__dirname, "src/pages/Register.tsx"),
       },
     },
   },
