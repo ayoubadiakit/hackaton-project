@@ -4,7 +4,7 @@ import img3 from '../assets/img/featur-3.jpg';
 import { allCategories } from '../datas/Data';
 import type { Category } from '../models/Category';
 
-export default function CategoriesSection({ onCategoryClick }: { onCategoryClick: (id: number) => void }) {
+export default function CategoriesSection({ onCategoryClick, onActive }: { onCategoryClick: (id: number) => void, onActive: number }) {
     return (
         <div className="col-lg-3">
             <div className="row g-4">
@@ -15,7 +15,7 @@ export default function CategoriesSection({ onCategoryClick }: { onCategoryClick
                             {allCategories.map((cat: Category) => (
                                 <li key={cat.id}>
                                     <div className="d-flex justify-content-between fruite-name">
-                                        <a href='#' onClick={() => onCategoryClick(cat.id)}><i className="fas fa-apple-alt me-2"></i>{cat.label}</a>
+                                        <a className={`btn rounded-pill text-primary ${onActive === cat.id ? "bg-secondary" : ""}`} onClick={() => onCategoryClick(cat.id)}><i className="fas fa-apple-alt me-2 "></i>{cat.label}</a>
                                         <span>(3)</span>
                                     </div>
                                 </li>

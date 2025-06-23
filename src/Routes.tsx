@@ -4,6 +4,7 @@ import Product from './pages/Product';
 import Layout from './Layout';
 import PageNotFound from './pages/PageNotFound';
 import DetailProduct from './pages/DetailProduct';
+import Contact from './pages/Contact';
 
 export const routes = createBrowserRouter([
     {
@@ -13,6 +14,7 @@ export const routes = createBrowserRouter([
             { path: '', element: <Dashboard /> }, // affiché dans <Outlet />
             { path: 'categories', element: <Product /> },
             { path: 'product/:id', element: <DetailProduct /> },
+            { path: 'contact', element: <Contact /> },
             { path: '*', element: <PageNotFound /> }, // affiché dans <Outlet />
         ],
     },

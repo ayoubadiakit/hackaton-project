@@ -18,7 +18,7 @@ export default function ProductCard({ product, styles }: { product: Product, sty
                         {detailText.length > 50 ? (
                             <>
                                 {detailText.slice(0, 50)}... 
-                                <Link to={'/product/11'}>
+                                <Link to={`/product/${product.id}`}>
                                     <p className="text-blue-600">voir plus</p>
                                 </Link>
                             </>
