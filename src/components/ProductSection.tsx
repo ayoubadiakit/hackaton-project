@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import ProductCard from './ProductCard';
 import type { Product } from '../models/Product';
-import { categories, products } from '../datas/Data';
+import { allCategories, products } from '../datas/Data';
 
 export default function ProductSection() {
     const [activeTab, setActiveTab] = useState<number>(1);
 
     const filteredProducts = (): Product[] => {
-        const selected = categories.find(c => c.id === activeTab);
+        const selected = allCategories.find(c => c.id === activeTab);
         if (!selected || !selected.category) return products;
         return products.filter(p => p.category === selected.category);
     };
@@ -21,7 +21,7 @@ export default function ProductSection() {
                         </div>
                         <div className="col-lg-9 text-end">
                             <ul className="nav nav-pills d-inline-flex text-center mb-5">
-                                {categories.map((tab) => (
+                                {allCategories.map((tab) => (
                                     <li key={tab.id} className="nav-item">
                                         <button
                                             className={`d-flex m-3 py-2 rounded-pill btn border border-secondary rounded-pill px-3 text-primary ${activeTab === tab.id ? "bg-secondary" : ""}`}
