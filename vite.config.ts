@@ -9,10 +9,11 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: path.resolve(__dirname, "index.html"),
-        product: path.resolve(__dirname, "src/pages/Product.tsx"),
         dashboard: path.resolve(__dirname, "src/pages/Dashboard.tsx"),
         detailProduct: path.resolve(__dirname, "src/pages/DetailProduct.tsx"),
         PageNotFound: path.resolve(__dirname, "src/pages/PageNotFound.tsx"),
+        product: path.resolve(__dirname, "src/pages/Product.tsx"),
+        contact: path.resolve(__dirname, "src/pages/Contact.tsx"),
       },
     },
   },
