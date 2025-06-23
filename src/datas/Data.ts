@@ -13,11 +13,20 @@ import img10 from "../assets/img/maïs.jpg";
 import img11 from "../assets/img/fonio.jpg";
 import img12 from "../assets/img/avoine.jpg";
 
-export const categories: Category[] = [
-  { id: 2, label: "Légumes", category: "légumes" },
-  { id: 3, label: "Fruits", category: "Fruits" },
-  { id: 4, label: "Céréales", category: "Céréales" },
-  { id: 1, label: "Tous", category: null },
+import img13 from "../assets/img/hero-img-1.png";
+import img14 from "../assets/img/hero-img-2.jpg";
+
+export const images = [
+  {
+    src: img13,
+    alt: "Fruits",
+    label: "Fruits",
+  },
+  {
+    src: img14,
+    alt: "Légumes",
+    label: "Légumes",
+  },
 ];
 
 export const allCategories: Category[] = [

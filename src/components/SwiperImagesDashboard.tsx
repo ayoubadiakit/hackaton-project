@@ -1,21 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
-import img1 from '../assets/img/hero-img-1.png';
-import img2 from '../assets/img/hero-img-2.jpg';
-
-const images = [
-    {
-        src: img1,
-        alt: 'Fruits',
-        label: 'Fruits',
-    },
-    {
-        src: img2,
-        alt: 'Legumes',
-        label: 'Legumes',
-    },
-];
+import { images } from '../datas/Data'
 
 export default function SwiperImagesDashboard() {
     return (
