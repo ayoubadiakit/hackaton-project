@@ -25,12 +25,13 @@ export default function Contact() {
                                 <div className="h-100 rounded">
                                     <iframe
                                         className="rounded w-100"
-                                        style={{ height: '400px' }}
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15774813.64620542!2d-15.0!3d10.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xe3fba6320e315d9%3A0xa4c10fa67d269d8c!2sGuin%C3%A9e!5e0!3m2!1sfr!2sfr!4v1719168989284!5m2!1sfr!2sfr"
+                                        title="Google Maps - Guinée"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12651981.080462437!2d-15.0453!3d9.9456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xe3fba6320e315d9%3A0xa4c10fa67d269d8c!2sGuin%C3%A9e!5e0!3m2!1sfr!2sfr!4v1719170684163!5m2!1sfr!2sfr"
+                                        height="400px"
+                                        style={{ border: 0 }}
+                                        allowFullScreen
                                         loading="lazy"
                                         referrerPolicy="no-referrer-when-downgrade"
-                                        allowFullScreen
-                                        title="Google Maps - Guinée"
                                     />
                                 </div>
                             </div>
