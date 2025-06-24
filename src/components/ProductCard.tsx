@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import type { Product } from "../models/Product";
+import type { Product } from "../types/Product";
 
 export default function ProductCard({ product, styles }: { product: Product, styles: string }) {
-    let detailText = "Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt"
+    let detailText = product.description;
     return (
         <div className={styles}>
             <div className="rounded position-relative fruite-item">
@@ -17,7 +17,7 @@ export default function ProductCard({ product, styles }: { product: Product, sty
                     <p>
                         {detailText.length > 50 ? (
                             <>
-                                {detailText.slice(0, 50)}... 
+                                {detailText.slice(0, 50)}...
                                 <Link to={`/product/${product.id}`}>
                                     <p className="text-blue-600">voir plus</p>
                                 </Link>

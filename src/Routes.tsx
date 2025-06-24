@@ -5,6 +5,7 @@ import Layout from './Layout';
 import PageNotFound from './pages/PageNotFound';
 import DetailProduct from './pages/DetailProduct';
 import Contact from './pages/Contact';
+import Card from './pages/Card';
 
 export const routes = createBrowserRouter([
     {
@@ -15,6 +16,7 @@ export const routes = createBrowserRouter([
             { path: 'categories', element: <Product /> },
             { path: 'product/:id', element: <DetailProduct /> },
             { path: 'contact', element: <Contact /> },
+            { path: 'card', element: <Card /> },
             { path: '*', element: <PageNotFound /> }, // affiché dans <Outlet />
         ],
     },

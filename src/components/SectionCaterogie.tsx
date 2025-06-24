@@ -2,7 +2,7 @@ import img1 from '../assets/img/featur-1.jpg';
 import img2 from '../assets/img/featur-2.jpg';
 import img3 from '../assets/img/featur-3.jpg';
 import { allCategories } from '../datas/Data';
-import type { Category } from '../models/Category';
+import type { Category } from '../types/Category';
 
 export default function CategoriesSection({ onCategoryClick, onActive }: { onCategoryClick: (id: number) => void, onActive: number }) {
     return (

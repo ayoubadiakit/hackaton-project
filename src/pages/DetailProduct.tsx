@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { products } from '../datas/Data';
-import type { Product } from '../models/Product';
+import type { Product } from '../types/Product';
 import { useState, useEffect } from 'react';
 import PageHeaderStart from '../components/PageHeaderStart';
 

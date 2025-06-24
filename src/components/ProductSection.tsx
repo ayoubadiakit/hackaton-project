@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import ProductCard from './ProductCard';
-import type { Product } from '../models/Product';
+import type { Product } from '../types/Product';
 import { allCategories, products } from '../datas/Data';
 
 export default function ProductSection() {

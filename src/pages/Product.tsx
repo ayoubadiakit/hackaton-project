@@ -1,7 +1,7 @@
 import CategoriesSection from '../components/SectionCaterogie';
 import ProductCard from '../components/ProductCard';
 import { allCategories, products } from '../datas/Data';
-import type { Product } from '../models/Product';
+import type { Product } from '../types/Product';
 import { useState } from 'react';
 import PageHeaderStart from '../components/PageHeaderStart';
 
@@ -27,7 +27,7 @@ export default function Product() {
                             <div className="row g-4">
                                 <div className="col-xl-3">
                                     <div className="input-group w-100 mx-auto d-flex">
-                                        <input type="search" className="form-control p-3" placeholder="Rechercher" aria-describedby="search-icon-1" />
+                                        <input type="search" className="form-control p-3" placeholder="Rechercher" />
                                         <span id="search-icon-1" className="input-group-text p-3"><i className="fa fa-search"></i></span>
                                     </div>
                                 </div>

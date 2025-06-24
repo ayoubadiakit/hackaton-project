@@ -62,7 +62,7 @@ export default function SectionNavigationBar() {
       <div className="container px-0">
         <nav className="navbar navbar-light bg-white navbar-expand-xl">
           <NavLink to="/" className="navbar-brand">
-            <h1 className="text-primary display-6">AGRICONNECT</h1> 
+            <h1 className="text-primary display-6">AGRICONNECT</h1>
           </NavLink>
           <button
             title="Toggle navigation menu"
@@ -78,13 +78,13 @@ export default function SectionNavigationBar() {
             id="navbarCollapse"
           >
             <div className="navbar-nav mx-auto">
-              <NavLink to="/" className="nav-item nav-link mx-2">Accueil</NavLink>
-              <NavLink to="/categories" className="nav-item nav-link mx-2">Catégories</NavLink>
-              <NavLink to="/a-propos" className="nav-item nav-link mx-2">À propos</NavLink>
-              <NavLink to="/contact" className="nav-item nav-link mx-2">Contact</NavLink>
+              <NavLink to={'/'} className="nav-item nav-link mx-2">Accueil</NavLink>
+              <NavLink to={"/categories"} className="nav-item nav-link mx-2">Catégories</NavLink>
+              <NavLink to={"/a-propos"} className="nav-item nav-link mx-2">À propos</NavLink>
+              <NavLink to={"/contact"} className="nav-item nav-link mx-2">Contact</NavLink>
             </div>
             <div className="d-flex m-3 me-0">
-              <a href="#" className="position-relative me-4 my-auto">
+              <NavLink to={'/card'} className="position-relative me-4 my-auto">
                 <i className="fa fa-shopping-bag fa-2x"></i>
                 <span
                   className="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
@@ -97,7 +97,7 @@ export default function SectionNavigationBar() {
                 >
                   3
                 </span>
-              </a>
+              </NavLink>
               <a href="#" className="my-auto" title="User account">
                 <i className="fas fa-user fa-2x"></i>
               </a>
