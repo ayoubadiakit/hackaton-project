@@ -14,7 +14,7 @@ export default function Product() {
     const [allProducts, setAllProducts] = useState<Product[]>([]);
     const [category, setCategory] = useState<Category[]>([]);
     const [query, setQuery] = useState<string>("")
-    
+
     const onClickCategory = (id: number) => {
         setActiveTab(id);
         const selected = category.find(c => c.id === id);

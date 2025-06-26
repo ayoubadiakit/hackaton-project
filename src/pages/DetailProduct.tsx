@@ -1,21 +1,14 @@
 import { useParams } from 'react-router-dom';
-import { products } from '../datas/Data';
 import type { Product } from '../types/Product';
 import { useState, useEffect } from 'react';
 import PageHeaderStart from '../components/PageHeaderStart';
 import { productService } from '../services/ProductService';
-import PageNotFound from './PageNotFound';
 
 export default function DetailProduct() {
     const { id } = useParams<{ id: string }>()
     const [product, setProduct] = useState<Product | null>()
     const [valOrder, setValOrder] = useState<number>(0)
 
-    // const handleSearch = () => {
-    //     const product = products.find(p => p.id === (id ? parseInt(id) : null))
-    //     if (!product) return null
-    //     setProduct(product)
-    // }
     const incrementOrder = () => {
         setValOrder(valOrder + 1)
     }

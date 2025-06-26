@@ -56,6 +56,7 @@ export const products: Product[] = [
   {
     id: 1,
     name: "Bananes",
+    quantity: 100,
     price: "$4.99 / kg",
     image: img1,
     category: "Fruits",
@@ -65,6 +66,7 @@ export const products: Product[] = [
   {
     id: 2,
     name: "Mangue",
+    quantity: 100,
     price: "$4.99 / kg",
     image: img2,
     category: "Fruits",
@@ -74,6 +76,7 @@ export const products: Product[] = [
   {
     id: 3,
     name: "Papaye",
+    quantity: 100,
     price: "$4.99 / kg",
     image: img3,
     category: "Fruits",
@@ -83,6 +86,7 @@ export const products: Product[] = [
   {
     id: 4,
     name: "Citron",
+    quantity: 100,
     price: "$4.99 / kg",
     image: img4,
     category: "Fruits",
@@ -92,6 +96,7 @@ export const products: Product[] = [
   {
     id: 5,
     name: "Tomate",
+    quantity: 100,
     price: "$4.99 / kg",
     image: img5,
     category: "légumes",
@@ -101,6 +106,7 @@ export const products: Product[] = [
   {
     id: 6,
     name: "Piment",
+    quantity: 100,
     price: "$4.99 / kg",
     image: img6,
     category: "légumes",
@@ -110,6 +116,7 @@ export const products: Product[] = [
   {
     id: 7,
     name: "Oignon",
+    quantity: 100,
     price: "$4.99 / kg",
     image: img7,
     category: "légumes",
@@ -119,6 +126,7 @@ export const products: Product[] = [
   {
     id: 8,
     name: "Gombo",
+    quantity: 100,
     price: "$4.99 / kg",
     image: img8,
     category: "légumes",
@@ -128,6 +136,7 @@ export const products: Product[] = [
   {
     id: 9,
     name: "Riz",
+    quantity: 100,
     price: "$4.99 / kg",
     image: img9,
     category: "Céréales",
@@ -137,6 +146,7 @@ export const products: Product[] = [
   {
     id: 10,
     name: "Maïs",
+    quantity: 100,
     price: "$4.99 / kg",
     image: img10,
     category: "Céréales",
@@ -146,6 +156,7 @@ export const products: Product[] = [
   {
     id: 11,
     name: "Fonio",
+    quantity: 100,
     price: "$4.99 / kg",
     image: img11,
     category: "Céréales",
@@ -155,6 +166,7 @@ export const products: Product[] = [
   {
     id: 12,
     name: "Avoine",
+    quantity: 100,
     price: "$4.99 / kg",
     image: img12,
     category: "Céréales",
@@ -167,6 +179,7 @@ export const cards: Product[] = [
   {
     id: 1,
     name: "Bananes",
+    quantity: 100,
     price: "$4.99 / kg",
     image: img1,
     category: "Fruits",
@@ -176,6 +189,7 @@ export const cards: Product[] = [
   {
     id: 2,
     name: "Tomate",
+    quantity: 100,
     price: "$4.99 / kg",
     image: img5,
     category: "légumes",
@@ -185,6 +199,7 @@ export const cards: Product[] = [
   {
     id: 3,
     name: "Riz",
+    quantity: 100,
     price: "$4.99 / kg",
     image: img9,
     category: "Céréales",
@@ -194,6 +209,7 @@ export const cards: Product[] = [
   {
     id: 4,
     name: "Avoine",
+    quantity: 100,
     price: "$4.99 / kg",
     image: img12,
     category: "Céréales",
