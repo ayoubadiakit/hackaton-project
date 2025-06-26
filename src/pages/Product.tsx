@@ -1,20 +1,47 @@
 import CategoriesSection from '../components/SectionCaterogie';
 import ProductCard from '../components/ProductCard';
-import { allCategories, products } from '../datas/Data';
 import type { Product } from '../types/Product';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PageHeaderStart from '../components/PageHeaderStart';
+import { productService } from '../services/ProductService';
+import type { Category } from '../types/Category';
+import { CategoryService } from '../services/CategoryService';
 
 export default function Product() {
+
     const [activeTab, setActiveTab] = useState<number>(1);
+    const [products, setProducts] = useState<Product[]>([]);
+    const [allProducts, setAllProducts] = useState<Product[]>([]);
+    const [category, setCategory] = useState<Category[]>([]);
+    const [query, setQuery] = useState<string>("")
+    
     const onClickCategory = (id: number) => {
         setActiveTab(id);
-    }
-    const filteredProducts = (): Product[] => {
-        const selected = allCategories.find(c => c.id === activeTab);
-        if (!selected || !selected.category) return products;
-        return products.filter(p => p.category === selected.category);
+        const selected = category.find(c => c.id === id);
+
+        if (!selected || !selected.category) {
+            setProducts(allProducts);
+        } else {
+            const filtered = allProducts.filter(p => p.category.toLowerCase() === selected.category?.toLowerCase());
+            setProducts(filtered);
+        }
     };
+
+    useEffect(() => {
+        productService.getAllProduct().then((res) => {
+            setAllProducts(res);
+            setProducts(res); // initialisation
+        });
+        CategoryService.getAllCategory().then(setCategory);
+
+        if (query.trim() === "") {
+            setProducts(allProducts);
+            return;
+        } else {
+            productService.searchByName(query).then(setProducts);
+        }
+
+    }, [query]);
 
     return (
         <>
@@ -27,7 +54,13 @@ export default function Product() {
                             <div className="row g-4">
                                 <div className="col-xl-3">
                                     <div className="input-group w-100 mx-auto d-flex">
-                                        <input type="search" className="form-control p-3" placeholder="Rechercher" />
+                                        <input
+                                            type="text"
+                                            className="form-control p-3"
+                                            placeholder="Rechercher"
+                                            value={query}
+                                            onChange={(e) => setQuery(e.target.value)}
+                                        />
                                         <span id="search-icon-1" className="input-group-text p-3"><i className="fa fa-search"></i></span>
                                     </div>
                                 </div>
@@ -45,10 +78,10 @@ export default function Product() {
                                 </div>
                             </div>
                             <div className="row g-5">
-                                <CategoriesSection onCategoryClick={onClickCategory} onActive={activeTab} />
+                                <CategoriesSection onCategoryClick={onClickCategory} onActive={activeTab} categories={category} />
                                 <div className="col-lg-9">
                                     <div className="row g-4 justify-content-center">
-                                        {filteredProducts().map((product) => (
+                                        {products.map((product) => (
                                             <ProductCard
                                                 key={product.id}
                                                 product={product}

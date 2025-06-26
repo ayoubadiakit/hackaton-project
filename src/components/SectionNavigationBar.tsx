@@ -1,8 +1,21 @@
-import { useEffect, useRef } from "react";
+import { Avatar, Divider, IconButton, ListItemIcon, Menu, MenuItem } from "@mui/material";
+import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router";
+import Settings from '@mui/icons-material/Settings';
+import Logout from '@mui/icons-material/Logout';
 
 export default function SectionNavigationBar() {
   const navRef = useRef(null);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [isLogin, setIsLogin] = useState<Boolean>(false)
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   useEffect(() => {
     function handleScroll() {
@@ -79,28 +92,104 @@ export default function SectionNavigationBar() {
           >
             <div className="navbar-nav mx-auto">
               <NavLink to={'/'} className="nav-item nav-link mx-2">Accueil</NavLink>
-              <NavLink to={"/categories"} className="nav-item nav-link mx-2">Catégories</NavLink>
+              <NavLink to={"/products"} className="nav-item nav-link mx-2">Catégories</NavLink>
               <NavLink to={"/a-propos"} className="nav-item nav-link mx-2">À propos</NavLink>
               <NavLink to={"/contact"} className="nav-item nav-link mx-2">Contact</NavLink>
             </div>
             <div className="d-flex m-3 me-0">
-              <NavLink to={'/card'} className="position-relative me-4 my-auto">
-                <i className="fa fa-shopping-bag fa-2x"></i>
-                <span
-                  className="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
-                  style={{
-                    top: "-5px",
-                    left: "15px",
-                    height: "20px",
-                    minWidth: "20px",
-                  }}
-                >
-                  3
-                </span>
-              </NavLink>
-              <a href="#" className="my-auto" title="User account">
-                <i className="fas fa-user fa-2x"></i>
-              </a>
+              {isLogin ? (
+                <>
+                  <NavLink to="/card" className="position-relative me-2 my-auto">
+                    <i className="fa fa-shopping-bag fa-2x"></i>
+                    <span
+                      className="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
+                      style={{
+                        top: "-5px",
+                        left: "15px",
+                        height: "20px",
+                        minWidth: "20px",
+                      }}
+                    >
+                      3
+                    </span>
+                  </NavLink>
+
+                  <IconButton
+                    onClick={handleClick}
+                    size="small"
+                    sx={{ ml: 1 }}
+                    aria-controls={open ? 'account-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : undefined}
+                  >
+                    <Avatar sx={{ width: 35, height: 35 }} className="btn btn-primary my-auto">M</Avatar>
+                  </IconButton>
+
+                  <Menu
+                    anchorEl={anchorEl}
+                    id="account-menu"
+                    open={open}
+                    onClose={handleClose}
+                    onClick={handleClose}
+                    slotProps={{
+                      paper: {
+                        elevation: 0,
+                        sx: {
+                          overflow: 'visible',
+                          filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+                          mt: 1.5,
+                          '& .MuiAvatar-root': {
+                            width: 32,
+                            height: 32,
+                            ml: -0.5,
+                            mr: 1,
+                          },
+                          '&::before': {
+                            content: '""',
+                            display: 'block',
+                            position: 'absolute',
+                            top: 0,
+                            right: 14,
+                            width: 10,
+                            height: 10,
+                            bgcolor: 'background.paper',
+                            transform: 'translateY(-50%) rotate(45deg)',
+                            zIndex: 0,
+                          },
+                        },
+                      },
+                    }}
+                    transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+                    anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+                  >
+                    <MenuItem onClick={handleClose}>
+                      <Avatar /> Profile
+                    </MenuItem>
+                    <Divider />
+                    <MenuItem onClick={handleClose}>
+                      <ListItemIcon>
+                        <Settings />
+                      </ListItemIcon>
+                      Paramètre
+                    </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                      <ListItemIcon>
+                        <Logout fontSize="small" />
+                      </ListItemIcon>
+                      Deconnexion
+                    </MenuItem>
+                  </Menu>
+                </>
+              ) : (
+                <>
+                  <NavLink to={"/login"} className="btn btn-outline-primary me-2">
+                    Se connecter
+                  </NavLink>
+                  <NavLink to={"/register"} className="btn btn-outline-primary">
+                    S'inscrire
+                  </NavLink>
+                </>
+              )}
             </div>
           </div>
         </nav>

@@ -1,10 +1,9 @@
 import img1 from '../assets/img/featur-1.jpg';
 import img2 from '../assets/img/featur-2.jpg';
 import img3 from '../assets/img/featur-3.jpg';
-import { allCategories } from '../datas/Data';
 import type { Category } from '../types/Category';
 
-export default function CategoriesSection({ onCategoryClick, onActive }: { onCategoryClick: (id: number) => void, onActive: number }) {
+export default function CategoriesSection({ onCategoryClick, onActive, categories }: { onCategoryClick: (id: number) => void, onActive: number, categories: Category[] }) {
     return (
         <div className="col-lg-3">
             <div className="row g-4">
@@ -12,10 +11,15 @@ export default function CategoriesSection({ onCategoryClick, onActive }: { onCat
                     <div className="mb-3">
                         <h4>Categories</h4>
                         <ul className="list-unstyled fruite-categorie">
-                            {allCategories.map((cat: Category) => (
+                            {categories.map((cat: Category) => (
                                 <li key={cat.id}>
                                     <div className="d-flex justify-content-between fruite-name">
-                                        <a className={`btn rounded-pill text-primary ${onActive === cat.id ? "bg-secondary" : ""}`} onClick={() => onCategoryClick(cat.id)}><i className="fas fa-apple-alt me-2 "></i>{cat.label}</a>
+                                        <a
+                                            onClick={() => onCategoryClick(cat.id)}
+                                            className={`btn rounded-pill text-primary ${onActive === cat.id ? "bg-secondary" : ""}`}
+                                        >
+                                            <i className="fas fa-apple-alt me-2"></i>{cat.label}
+                                        </a>
                                         <span>(3)</span>
                                     </div>
                                 </li>
