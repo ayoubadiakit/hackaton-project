@@ -118,16 +118,19 @@
     {
       "id": 2,
       "label": "Légumes",
+      "src": "/img/hero-img-2.jpg",
       "category": "légumes"
     },
     {
       "id": 3,
       "label": "Fruits",
+      "src": "/img/hero-img-1.png",
       "category": "Fruits"
     },
     {
       "id": 4,
       "label": "Céréales",
+      "src": "/img/cereales.jpg",
       "category": "Céréales"
     }
   ]

@@ -23,4 +23,9 @@ export const CategoryService = {
   remove: async (id: number): Promise<void> => {
     await axios.delete(`${API_URL}/${id}`);
   },
+
+  getCategoriesDashboard: async (): Promise<Category[]> => {
+    const res = await axios.get(API_URL);
+    return res.data;
+  },
 };

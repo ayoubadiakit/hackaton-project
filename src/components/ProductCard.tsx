@@ -14,18 +14,18 @@ export default function ProductCard({ product, styles }: { product: Product, sty
                 </div>
                 <div className="p-4 border border-secondary border-top-0 rounded-bottom">
                     <h4>{product.name}</h4>
-                    <p>
+                    <div>
                         {detailText.length > 50 ? (
-                            <>
-                                {detailText.slice(0, 50)}...
+                            <div>
+                                <p>{detailText.slice(0, 50)}...</p>
                                 <Link to={`/product/${product.id}`}>
                                     <p className="text-blue-600">voir plus</p>
                                 </Link>
-                            </>
+                            </div>
                         ) : (
-                            detailText
+                            <p>{detailText}</p>
                         )}
-                    </p>
+                    </div>
                     <div className="d-flex justify-content-between flex-lg-wrap">
                         <p className="text-dark fs-5 fw-bold mb-0">{product.price}</p>
                         <a href="#" className="btn border border-secondary rounded-pill px-3 text-primary">

@@ -78,7 +78,12 @@ export default function Product() {
                                 </div>
                             </div>
                             <div className="row g-5">
-                                <CategoriesSection onCategoryClick={onClickCategory} onActive={activeTab} categories={category} />
+                                <CategoriesSection
+                                    onCategoryClick={onClickCategory}
+                                    onActive={activeTab}
+                                    categories={category}
+                                    products={products}
+                                />
                                 <div className="col-lg-9">
                                     <div className="row g-4 justify-content-center">
                                         {products.map((product) => (

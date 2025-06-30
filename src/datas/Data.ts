@@ -32,22 +32,26 @@ export const images = [
 export const allCategories: Category[] = [
   {
     id: 1,
+    src: "",
     label: "Tout",
     category: null,
   },
   {
     id: 2,
+    src: "",
     label: "Légumes",
     category: "légumes",
   },
   {
     id: 3,
     label: "Fruits",
+    src: "",
     category: "Fruits",
   },
   {
     id: 4,
     label: "Céréales",
+    src: "",
     category: "Céréales",
   },
 ];
