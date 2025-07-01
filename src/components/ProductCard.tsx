@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
 import type { Product } from "../types/Product";
+import { motion } from "motion/react"
 
 export default function ProductCard({ product, styles }: { product: Product, styles: string }) {
     let detailText = product.description;
     return (
-        <div className={styles}>
+        <motion.div className={styles}
+            layout
+            initial={{ opacity: 0.6, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+        >
             <div className="rounded position-relative fruite-item">
                 <div className="fruite-img">
                     <img src={product.image} className="img-fluid w-100 rounded-top" alt={product.name} style={{ width: '130px', height: '210px' }} />
@@ -34,6 +41,6 @@ export default function ProductCard({ product, styles }: { product: Product, sty
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }

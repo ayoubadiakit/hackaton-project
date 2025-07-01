@@ -4,44 +4,44 @@ import type { Product } from '../types/Product';
 import { useEffect, useState } from 'react';
 import PageHeaderStart from '../components/PageHeaderStart';
 import { productService } from '../services/ProductService';
-import type { Category } from '../types/Category';
 import { CategoryService } from '../services/CategoryService';
+import { useQuery } from '@tanstack/react-query';
+import { AnimatePresence } from "motion/react"
 
 export default function Product() {
-
+    const { data: products } = useQuery({ queryKey: ['products'], queryFn: productService.getAllProduct })
+    const { data: categories } = useQuery({ queryKey: ['categories'], queryFn: CategoryService.getAllCategory })
     const [activeTab, setActiveTab] = useState<number>(1);
-    const [products, setProducts] = useState<Product[]>([]);
-    const [allProducts, setAllProducts] = useState<Product[]>([]);
-    const [category, setCategory] = useState<Category[]>([]);
-    const [query, setQuery] = useState<string>("")
-
-    const onClickCategory = (id: number) => {
-        setActiveTab(id);
-        const selected = category.find(c => c.id === id);
-
-        if (!selected || !selected.category) {
-            setProducts(allProducts);
-        } else {
-            const filtered = allProducts.filter(p => p.category.toLowerCase() === selected.category?.toLowerCase());
-            setProducts(filtered);
-        }
-    };
+    const [filteredProducts, setFilteredProducts] = useState<Product[]>([])
 
     useEffect(() => {
-        productService.getAllProduct().then((res) => {
-            setAllProducts(res);
-            setProducts(res); // initialisation
-        });
-        CategoryService.getAllCategory().then(setCategory);
-
-        if (query.trim() === "") {
-            setProducts(allProducts);
-            return;
-        } else {
-            productService.searchByName(query).then(setProducts);
+        if (products) {
+            setFilteredProducts(products)
         }
+    }, [products])
 
-    }, [query]);
+    const onClickCategory = (id: number) => {
+        setActiveTab(id)
+        const selected = categories?.find(c => c.id === id)
+        if (!selected?.category) {
+            // Si aucun nom de catégorie n’est défini, afficher tous les produits
+            setFilteredProducts(products || [])
+        } else {
+            const filtered = products?.filter(
+                p => p.category.toLowerCase() === selected.category?.toLowerCase()
+            )
+            setFilteredProducts(filtered || [])
+        }
+    }
+
+    const onQuerySearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const query = e.target.value;
+
+        const filtered = products?.filter(
+            p => p.name.toLowerCase().includes(query.toLowerCase())
+        )
+        setFilteredProducts(filtered || [])
+    }
 
     return (
         <>
@@ -58,8 +58,8 @@ export default function Product() {
                                             type="text"
                                             className="form-control p-3"
                                             placeholder="Rechercher"
-                                            value={query}
-                                            onChange={(e) => setQuery(e.target.value)}
+                                            name='search'
+                                            onChange={(e) => onQuerySearch(e)}
                                         />
                                         <span id="search-icon-1" className="input-group-text p-3"><i className="fa fa-search"></i></span>
                                     </div>
@@ -81,17 +81,19 @@ export default function Product() {
                                 <CategoriesSection
                                     onCategoryClick={onClickCategory}
                                     onActive={activeTab}
-                                    categories={category}
-                                    products={products}
+                                    categories={categories || []}
+                                    products={products || []}
                                 />
                                 <div className="col-lg-9">
                                     <div className="row g-4 justify-content-center">
-                                        {products.map((product) => (
-                                            <ProductCard
-                                                key={product.id}
-                                                product={product}
-                                                styles='col-md-6 col-lg-6 col-xl-4'
-                                            />
+                                        {filteredProducts?.map((product) => (
+                                            <AnimatePresence>
+                                                <ProductCard
+                                                    key={product.id}
+                                                    product={product}
+                                                    styles='col-md-6 col-lg-6 col-xl-4'
+                                                />
+                                            </AnimatePresence>
                                         ))}
 
                                         <div className="col-12">
